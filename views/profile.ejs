@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Krushnal Patel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrypto - Homepage</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/_footer.css">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<body>
+    <%- include('_header') %>
+        <main>
+            <h1>Manage Profile</h1>
+            <div class="menu d-f-r ai-c">
+                <ul class="menu-list">
+                    <li class="menu-list-item">Account</li>
+                    <li class="menu-list-item">File settings</li>
+                </ul>
+            </div>
+            <section class="content" id="profile">
+                <h2 class="content-heading">Profile</h2>
+                <div class="d-f-r">
+                    <form id="details-form" action="/user/update_details" method="POST">
+                        <dl>
+                            <dt>Email Address</dt>
+                            <input name="email" class="text-input" type="email">
+                            <button id="email-submit" class="button submit">Submit</button>
+                            <button id="email-cancel" class="button cancel">Cancel</button>
+                        </dl>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <%- include('_footer') %>
+</body>
+
+</html>

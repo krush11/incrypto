@@ -1,0 +1,143 @@
+@import "common.css";
+
+body,
+html {
+    background: rgb(50, 176, 223);
+    background: -moz-linear-gradient(180deg, rgba(50, 176, 223, 1) 0%, rgba(30, 106, 253, 1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(50, 176, 223, 1) 0%, rgba(30, 106, 253, 1) 100%);
+    background: linear-gradient(180deg, rgba(50, 176, 223, 1) 0%, rgba(30, 106, 253, 1) 100%);
+}
+
+main {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
+    height: 100vh;
+}
+
+a {
+    color: #217999;
+    text-decoration: underline;
+}
+
+.auth-pannel {
+    min-width: 440px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 40px;
+    margin-top: 0px;
+}
+
+.auth-pannel h2 {
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+
+.shrunk-h2 {
+    margin: 0;
+}
+
+p {
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.auth-form {
+    padding: 20px 40px;
+    height: fit-content;
+}
+
+.err-msg {
+    font-size: 12px;
+    margin-bottom: 1rem;
+    color: red;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #62748e;
+    width: 100%;
+    margin-bottom: 8px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.req {
+    margin-left: 3px;
+    color: red;
+}
+
+.form-control::before {
+    background: url(/imgs/icons/user.png);
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #3f3f44;
+    background-color: #fff;
+    border: 1px solid #cbcbd2;
+    border-radius: 6px;
+    transition: border-color, outlint, -webkit-box-shadow, box-shadow 0.25s;
+}
+
+.form-control:focus {
+    border-color: var(--bg-primary-color);
+    outline: 0;
+    -webkit-box-shadow: 0 0 8px -2px rgba(50, 176, 223, 1), 0 1px 8px 1px rgba(30, 106, 253, 0.3);
+    box-shadow: 0 0 8px -2px rgba(50, 176, 223, 1), 0 1px 8px 1px rgba(30, 106, 253, 0.3);
+}
+
+.err-popup {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.forgot-pass {
+    text-align: right;
+    text-decoration: underline;
+    color: #217999;
+    margin: 0;
+    padding-top: 0;
+}
+
+.submit {
+    background: rgba(30, 106, 253, 0.8);
+    cursor: pointer;
+    color: white;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    border: none;
+    letter-spacing: 2px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.submit:hover {
+    background-color: rgba(30, 106, 253, 1);
+}
+
+.pannel-footer {
+    display: block;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #4a4a4d25;
+    padding: 20px;
+    text-align: center;
+    text-align: center;
+    font-weight: 400;
+}

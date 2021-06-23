@@ -1,0 +1,9 @@
+main {
+    min-height: calc(100vh - 65px - 267px);
+    padding: 5vh 20vw;
+}
+
+ul li {
+    list-style-type: numbers;
+    margin: 10px;
+}

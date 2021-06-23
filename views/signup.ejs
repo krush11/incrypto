@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Krushnal Patel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrypto - Homepage</title>
+    <script src="/js/signup.js"></script>
+    <link rel="stylesheet" href="/css/authenticate.css">
+</head>
+
+<body>
+    <main class="d-f-c ai-c ">
+        <h1><a href="/"><img src="/imgs/logos/incrypto_white.png" alt="incrypto"></a></h1>
+        <div class="auth-pannel">
+            <h2 class="shrunk-h2">Sign up for free and <br> experience Incrypto free</h2>
+            <form class="auth-form" id="signin" action="/auth/signup" method="POST">
+                <div class="err-msg">
+                    <% if(send_message) {%>
+                        <%= message %>
+                            <% } %>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name<span class="req">*</span></label>
+                    <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username<span class="req">*</span></label>
+                    <input class="form-control" id="username" name="username" placeholder="Username" type="text" required>
+                    <div id="username-msg" class="err-popup">Username already exists. If this is you then
+                        <a href="/auth/signin">login here</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address<span class="req">*</span></label>
+                    <input class="form-control" id="email" name="email" placeholder="Email Address" type="email" required>
+                    <div id="email-msg" class="err-popup">Email already exists. If this is you then
+                        <a href="/auth/signin">login here</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password<span class="req">*</span></label>
+                    <input class="form-control" id="password" name="password" placeholder="Password" type="password" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" name="terms" id="terms"> By signing up I agree to the <a href="/terms">Terms and Conditions</a>
+                    <div id="terms-msg" class="err-popup">Please accept the terms and conditions to signup</div>
+                </div>
+                <input type="button" class="submit" onclick="checkIfUserExists(`<%=emails%>`,`<%=usernames%>`)" value="Sign in">
+            </form>
+            <span class="pannel-footer">Already registered?&numsp;<a href="/auth/signin">Sign in</a></span>
+        </div>
+    </main>
+</body>
+
+</html>

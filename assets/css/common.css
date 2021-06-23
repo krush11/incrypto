@@ -1,0 +1,57 @@
+html, body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+:root {
+    --bg-primary-color: #32b0df;
+}
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    color: black;
+}
+
+.d-f {
+    display: flex;
+}
+
+.d-f-c {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-f-r {
+    display: flex;
+    flex-direction: row;
+}
+
+.f-w {
+    flex-wrap: wrap;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.jc-se {
+    justify-content: space-evenly;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.ai-fe {
+    align-items: flex-end;
+}

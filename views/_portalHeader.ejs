@@ -1,0 +1,24 @@
+<header class="portal-header d-f-r jc-sb ai-c">
+    <a href="/portal">
+        <img id="logo" src="/imgs/logos/incrypto_original.png" alt="Incrypto">
+    </a>
+    <span class="dropdown">
+        <span class="portal-nav-item">
+            <%= locals.user.username %>
+        </span>
+        <div class="dropdown-content">
+            <div class="dropdown-sec">
+                <a href='/portal/profile/<%= locals.user.username %>'>Signed in as&numsp;
+                    <strong class="dropdown-username">
+                        <%= locals.user.username %>
+                    </strong>
+                </a>
+            </div>
+            <div class="dropdown-sec">
+                <a href="/portal/profile/<%= locals.user.username %>">Your Profile</a>
+                <a href="/portal/upgrade/<%= locals.user.username %>">Upgrade</a>
+                <a href="/auth/logout">Sign out</a>
+            </div>
+        </div>
+    </span>
+</header>

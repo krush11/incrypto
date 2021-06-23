@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Krushnal Patel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrypto - Homepage</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/js/portal.js"></script>
+</head>
+
+<body>
+    <%- include('_portalHeader') %>
+        <div>
+            <% if(!verified) {%>
+                <div class="err-popup">Your account hasn't been verified yet.
+                    <a href="/auth/verification_req">Verify now</a> with few simple clicks
+                </div>
+                <% } %>
+                    <% if(flashMsg) {%>
+                        <div class="err-popup">
+                            <%= msg %>
+                        </div>
+                        <% } %>
+                            <div id="err-msg" class="err-popup"></div>
+        </div>
+        <section class="d-f-r">
+            <aside>
+                <div onclick="toggleAside()" class="cross"> &#10006;</div>
+                <div class="aside-sec">
+                    <!-- Folder Upload -->
+                    <div onclick="showForm('create-folder')" class="aside-options">
+                        <img src="/imgs/icons/folder.svg">
+                        Create new folder
+                    </div>
+                    <form class="input-forms" id="create-folder" method="POST"
+                        action="/portal/create-folder/<%=locals.user.username %>/<%= populatedStorage._id %>">
+                        <div class="form-group">
+                            <label for="folder_name">Enter Folder Name<span class="req">*</span></label>
+                            <input class="form-control" id="folder_name" name="folder_name" placeholder="Folder Name" type="text" required>
+                            <input type="submit" class="submit">
+                        </div>
+                    </form>
+
+                    <!-- File Upload -->
+                    <div onclick="showForm('upload-file')" class="aside-options">
+                        <img src="/imgs/icons/file.svg">Upload File
+                    </div>
+                    <form class="input-forms" id="upload-file" method="POST"
+                        action="/portal/upload-file/<%= locals.user.username %>/<%= populatedStorage._id %>" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="partitions">Number of Partitions</label>
+                            <input class="form-control" id="partitions" name="partitions" placeholder="Partitions (optional)" type="number"
+                                required><br><br>
+                        </div>
+                        <input id="file" name="file" type="file" required>
+                        <input type="submit" class="submit">
+                    </form>
+                    <div class="aside-options">
+                        <a href="/portal/delete-file"><img src="/imgs/icons/file.svg">Delete File</a>
+                    </div>
+                    <div onclick="showForm('upload-file')" class="aside-options">
+                        <a href=""><img src="/imgs/icons/file.svg">Delete File</a>
+                    </div>
+                </div>
+            </aside>
+            <div onclick="toggleAside()" class="hamburger-icon">&#9776;</div>
+
+            <!-- Main Section -->
+            <main>
+                <div>
+                    <%if(populatedStorage.storage_name !='master folder' ){%>
+                        <a href="/portal/<%= locals.user.username %>/<%= populatedStorage.parent %>"><i class="fa fa-arrow-left"></i>
+                            Go back
+                        </a>
+                        <%}%>
+                </div>
+                <div class="folder-section">
+                    <h2>Folders</h2>
+                    <span class="entity-section">
+                        <% populatedStorage.children.forEach(function(child) {%>
+                            <div>
+                                <span ondblclick="openFolder('<%= child._id%>', '<%= locals.user.username%>')" id="<%= child._id %>"
+                                    class="entity-container">
+                                    <img class="entity-icon" src="/imgs/icons/folder.svg">
+                                    <span class="entity-name">
+                                        <%= child.storage_name %>
+                                    </span>
+                                </span>
+                            </div>
+                            <% }) %>
+                    </span>
+                </div>
+                <div class="file-section">
+                    <h2>Files</h2>
+                    <span class="entity-section">
+                        <% files.forEach(function(file) {%>
+                            <div>
+                                <span ondblclick="showFile('<%= file %>')" class="entity-container">
+                                    <img class="entity-icon" src="/imgs/icons/file.svg">
+                                    <span class="entity-name">
+                                        <%= file %>
+                                    </span>
+                                </span>
+                            </div>
+                            <% }) %>
+                    </span>
+                </div>
+            </main>
+        </section>
+</body>
+
+</html>

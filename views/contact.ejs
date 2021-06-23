@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Krushnal Patel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrypto - Homepage</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/_footer.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <script src="/js/contact.js"></script>
+</head>
+
+<body onload="defaultOption('<%= option %>')">
+    <%- include('_header') %>
+        <main class="d-f-c ai-c jc-c">
+            <h1>Connect with the team behind the idea</h1>
+            <form class="contact" id="contact-form" action="/contact/submit" method="POST">
+                <div id="personal-info" class="d-f-r">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input class="form-input" type="text" name="name" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input class="form-input" type="email" name="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNo">Phone Number</label>
+                        <input class="form-input" type="text" name="phoneNo" id="phoneNo" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select class="form-input" id="subject" name="subject" required>
+                        <option value="bug">Report a Bug</option>
+                        <option value="join-team">Join the Team</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Message</label>
+                    <textarea name="message" id="message" form="contact-form" class="form-input" placeholder="Enter Message" required></textarea>
+                </div>
+                <button class="submit">Submit</button>
+            </form>
+        </main>
+        <%- include('_footer') %>
+</body>
+
+</html>

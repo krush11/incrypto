@@ -1,0 +1,19 @@
+<header class="d-f-r jc-sb ai-c">
+    <a href="/">
+        <img id="logo" src="/imgs/logos/incrypto_original.png" alt="Incrypto">
+    </a>
+    <span>
+        <a class="nav-item" href="/portal">
+            Portal <img src="/imgs/icons/redirect.svg">
+        </a>
+        <% if( locals.user ) {%>
+            <a class="nav-item" href="/auth/logout">Sign out</a>
+            <%}%>
+                <% if( !locals.user ) {%>
+                    <span>
+                        <a class="nav-item" href="/auth/signin">Sign in</a>
+                        <a id="register" href="/auth/signup">Sign up</a>
+                    </span>
+                    <% } %>
+    </span>
+</header>

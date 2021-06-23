@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Krushnal Patel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrypto - Homepage</title>
+    <link rel="stylesheet" href="/css/authenticate.css">
+</head>
+
+<body>
+    <main class="d-f-c ai-c jc-c">
+        <h1><a href="/"><img src="/imgs/logos/incrypto_white.png" alt="incrypto"></a></h1>
+        <div class="auth-pannel">
+            <h2>Log in to your account</h2>
+            <form class="auth-form" action="/auth/signin" method="POST">
+                <div class="form-group">
+                    <label for="user_id">Email/Username<span class="req">*</span></label>
+                    <input class="form-control" id="user_id" name="user_id" placeholder="Email/Username" type="text"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password<span class="req">*</span></label>
+                    <input class="form-control" id="password" name="password" placeholder="Password" type="password">
+                </div>
+                <a href="/auth/forgot">
+                    <p class="forgot-pass">Forgot password?</p>
+                </a>
+                <input type="submit" class="submit" value="Login">
+            </form>
+            <span class="pannel-footer">New to Incrypto?&numsp;<a href="/auth/signup">Signup</a></span>
+        </div>
+    </main>
+</body>
+
+</html>

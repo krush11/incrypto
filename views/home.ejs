@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Krushnal Patel">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incrypto - Homepage</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/_header.css">
+    <link rel="stylesheet" href="/css/_footer.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <%- include('_header') %>
+        <main>
+            <div class="intro-section">
+                <h1 class="intro-title">Innovating the Future of Storage.</h1>
+                <h2 class="wordCarousel">
+                    <div>
+                        <ul class="flip4">
+                            <li>Peer-to-Peer Sharing.</li>
+                            <li>Decentralized Network.</li>
+                            <li>Robust Storage.</li>
+                            <li>Temp</li>
+                        </ul>
+                    </div>
+                </h2>
+            </div>
+            <div class="features-section d-f-r ai-c jc-c">
+                <div class="feature bk-blue d-f-c ai-c jc-c">
+                    <img class="feature-img" src="/imgs/icons/shield.svg">
+                    <h3>Secure Storage</h3>
+                    <div class="feature-content">
+                        All files will be stored as parts across different user accounts so if your account gets
+                        compromised, your files don't.
+                    </div>
+                </div>
+                <div class="feature bk-green d-f-c ai-c jc-c">
+                    <img class="feature-img" src="https://image.flaticon.com/icons/png/512/4354/4354700.png">
+                    <h3>Efficient Storage</h3>
+                    <div class="feature-content">
+                        Files stored across different users ensure that there is an even distribution of storage space
+                        across different users.
+                    </div>
+                </div>
+                <div class="feature bk-pink d-f-c ai-c jc-c">
+                    <img class="feature-img" src="https://image.flaticon.com/icons/png/512/3798/3798294.png">
+                    <h3>Ease of Access</h3>
+                    <div class="feature-content">
+                        Easy to use portal UI/UX. Storage system very similar to the one in everyday PC use. All files
+                        and folders are just a few clicks away
+                    </div>
+                </div>
+                <div class="feature bk-orange d-f-c ai-c jc-c">
+                    <img class="feature-img" src="https://image.flaticon.com/icons/png/512/4233/4233834.png">
+                    <h3>Personalised Support</h3>
+                    <div class="feature-content">
+                        Our profecient team is quick to respond on any queries you might have providing utmost customer
+                        service
+                    </div>
+                </div>
+            </div>
+            <a href="/portal" class="portal-redirect d-f-r ai-c jc-c">
+                <span>Try Incrypto now</span>
+                <svg class="capa">
+                    <defs>
+                        <marker id="m" markerWidth="4" markerHeight="8" refX="0" refY="1" viewBox="0 0 1 2">
+                            <polygon points="0,0 1,1 0,2" fill="white"></polygon>
+                        </marker>
+                    </defs>
+                    <line x1="0" y1="50%" x2="100%" y2="50%" stroke-width="2" marker-end="url(#m)" stroke="white">
+                    </line>
+                </svg>
+            </a>
+        </main>
+        <%- include('_footer') %>
+</body>
+
+</html>
